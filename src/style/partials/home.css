@@ -1,0 +1,122 @@
+#home{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	z-index: 3;
+	padding: 190px 0 40px 1px;
+}
+.all-items-home{
+	width: 1100px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	margin: 80px;
+}
+.title-home{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.title-big-home{
+	margin: 0 0 30px 0;
+	font-family: Lato-Bold;
+	font-size: 35px;
+	text-transform: uppercase;
+	color: #000;
+}
+.title-big-home span{
+	color: #009dda;
+}
+.title-small-home{
+	margin-top: -18px;
+	text-align: center;
+	font-family: Lato-Regular;
+	font-size: 14px;
+	color: white;
+	color: #999999;
+	line-height: 3;
+}
+.home-item{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width:200px;
+	height: 270px;
+	border: 1px solid #ebebeb;
+	position: relative;
+}
+.home-item div.home-img-item{
+	height: 110px;
+}
+.home-item-description{
+	display: block;
+	margin: 0 auto;
+	align-items: center;
+	text-align: center;
+}
+.home-item-description span {
+	font-family: Lato-Heavy;
+	font-size: 14px;
+	text-transform: uppercase;
+	color: black;
+}
+.home-item-description  p{
+	margin-top: 20px; 
+	width: 155px;
+	font-family: Lato-Light;
+	font-size: 14px;
+	color: #373737;
+}
+.home-hover{
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background: #503392;
+	width: inherit;
+	height: 148px;
+	position: absolute;
+	bottom: 0;
+}
+.home-hover p{
+	font-family: Lato-Semibold;
+	color: #fff;
+
+}
+.home-hover span{
+	margin-top: 30px;
+}
+.home-hover span a{
+	padding: 0 3px 0 3px; 
+}
+.home-item:hover .home-hover{
+	display: flex;
+}
+
+@media screen and (max-width: 1024px){
+	#home{
+		width: 1024px;
+	}
+	.all-items-home{
+		width: 1000px;
+		margin: 80px;
+	}
+}
+@media screen and (max-width: 768px){
+	#home{
+		width: 768px;
+	}
+	.all-items-home{
+		width: 100%;
+		margin: 80px;
+	}
+	.home-item{
+		width: 180px;
+	}
+}

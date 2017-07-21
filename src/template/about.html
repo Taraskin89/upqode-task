@@ -1,0 +1,70 @@
+<section id="about">
+	<div class="about-us-text">
+	<div>
+		<span>ABOUT </span> US
+		<p class="about-title">Quisque fermentum, nisl mattis volutpat rhoncus, tellus est congue nibh, ut euism
+			Nullam at scelerisque tellus mattis volutpat rhoncus, </p>
+		<p class="about-paragraph">
+			Nullam at scelerisque tellus. Nulla feugiat iaculis ante, non tincidunt ligula 
+			scelerisque a. Vestibulum accumsan tincidunt odio vel finibus. Phasellus vestibulum lobortis ligula ut volutpat. Maecenas vitae nibh vel purus mollis semper. Nullam 
+			tempus feugiat mi id semper. Pellentesque ac posuere augue, vitae mollis enim. 
+			Etiam et ullamcorper dolor, a hendrerit quam.
+		</p>
+
+		<p class="value" align="justify">PHOTOSHOP 79%</p>
+  		<div class="progressBar-1 tiny-green"><div></div></div>
+  		</progress>
+  		<p class="value" align="justify">HTML/CSS 90%</p>
+  		<div class="progressBar-2 tiny-green"><div></div></div>
+    	</progress>
+  		<p class="value" align="justify">JAVASCRIPT 69%</p>
+  		<div class="progressBar-3 tiny-green"><div></div></div>
+  		</progress>
+  		<p class="value" align="justify">WORDPRESS 92%</p>
+  		<div class="progressBar-4 tiny-green"><div></div></div>
+  		</progress>
+	</div>
+	<div class="mockup">
+		<img class="mockup-ipad" src="./img/ipad.png" alt=""/>
+		<img class="mockup-shadow" src="./img/ipad-shadow.png" alt=""/>
+	</div>
+	</div>
+	
+	<div class="about-us-text bottom-text">
+		<a href="#">GET&nbsp;IN<span>&nbsp;TOUCH</span></a>
+		<p class="about-title">
+		Quisque fermentum, nisl mattis volutpat rhoncus, tellus est congue nibh, ut euism
+			        Nullam at scelerisque tellus mattis volutpat rhoncus, 
+		</p>
+	</div>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('.mockup-ipad').addClass("hidden").viewportChecker({
+	    		classToAdd: 'visible animated bounceInUp',
+	    		offset: 100    
+	   		});
+
+			$(".mockup-shadow").fadeIn(3000);
+
+			$(document).on("scroll", function () {
+				var bar_selector = ".progressBar-1";
+    			var scroll_top = $(document).scrollTop();
+    			$(bar_selector + " a").each(function(){
+        			var hash = $(this).attr("href");
+        			var target = $(hash);
+        			if (target.position().top <= scroll_top && target.position().top + target.outerHeight() > scroll_top) {
+        			}
+    			});
+			});
+		});   
+		function progressBar(percent, $element) {
+				var progressBarWidth = percent * ($element.width() + 6) / 100;
+					$element.find("div").animate({ width: progressBarWidth }, 1000);
+				
+		}
+						progressBar(79, $(".progressBar-1"));
+						progressBar(90, $(".progressBar-2"));
+						progressBar(69, $(".progressBar-3"));
+						progressBar(92, $(".progressBar-4"));     
+	</script>
+</section>

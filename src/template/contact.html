@@ -1,0 +1,201 @@
+<section id="contact">
+	<div id="googlemaps"></div>
+	<div id="contactform">
+	<div id="form">
+        <form class="contact-form" id="feedback-form">
+            <div class="name">
+                <input type="text" id="fullname" placeholder="Full Name" />
+                <div class="error-box"></div>
+            </div>
+            <div class="email">
+                <input type="email" id="email" placeholder="Email Address" />
+                <div class="error-box"></div>
+            </div>
+            <div class="message">
+                <textarea name="message" id="message" placeholder="Message"></textarea>
+                <div class="error-box"></div>
+            </div>
+            <div class="submit">
+            	<span><label for="checkbox"><input type="checkbox" id="checkbox"/> I like your company</label></span><div class="error-box"></div>
+            	<input type="submit" value="Send" class="buttonSend" id="send" />
+
+            </div>
+            <div class="contacts"></div>
+        </form>
+        <div class="contact-info">
+        	<p>
+        			69/A, Some Street Name
+				Your City, code 01234 
+				Country Name
+
+				+880 123 456 78 98
+				+860 987 648 74 95
+
+				company@mail.com
+				sales@mail.com
+        	</p>
+        </div>
+    </div>
+	</div>
+	<script type="text/javascript">
+	 	 
+	function showGoogleMaps() {
+	 
+		var mapOptions = {
+			zoom: 16,
+			streetViewControl: false,
+			scaleControl: true,
+			mapTypeId: google.maps.MapTypeId.ROADMAP,
+			center: {lat: 49.839829974, lng: 24.02249991}
+		};
+	 
+		map = new google.maps.Map(document.getElementById('googlemaps'),
+		mapOptions);
+	 
+		marker = new google.maps.Marker({
+			position: {lat: 49.839829974, lng: 24.02249991},
+			map: map,
+			draggable: false,
+			animation: google.maps.Animation.DROP
+		});
+	}   
+	$('input[type=checkbox]').css({'opacity': 0}).wrap('<span class="wrap-checkbox"></span>');  
+	$('.wrap-checkbox').on("click",function() {
+  		$(this).toggleClass('active');
+	})   
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#form').addClass("hidden").viewportChecker({
+	    	classToAdd: 'visible animated flipInX',
+	    	offset: 100    
+	   	});   
+	});   
+</script>
+<script type="text/javascript">
+      $(document).ready(function(){
+         $('input#fullname, input#email, textarea#message').unbind().blur( function(){
+            
+             var id = $(this).attr('id');
+             var val = $(this).val();
+           switch(id)
+           {
+                 case 'name':
+                    var rv_name = /^[a-zA-Zа-яА-Я]+$/; 
+
+                    if(val.length > 5 && rv_name.test(val))
+                    {
+                       $(this).addClass('not_error');
+                       $(this).next('.error-box').text('Correct')
+                                                 .css('color','#69fb7a')
+                                                 .animate({'paddingLeft':'10px'},400)
+                                                 .animate({'paddingLeft':'5px'},400);
+                    }
+                    else
+                    {
+                       $(this).removeClass('not_error').addClass('error');
+                       $(this).next('.error-box').html('Only chart type symbol! Minimum 6 characters')
+                                                  .animate({'paddingLeft':'10px'},400)
+                                                  .animate({'paddingLeft':'5px'},400);
+                    }
+                break;
+               case 'email':
+                   var rv_email = /^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+/;
+                   if(val != '' && rv_email.test(val))
+                   {
+                      $(this).addClass('not_error');
+                      $(this).next('.error-box').text('Correct')
+                                                .css('color','#69fb7a')
+                                                .animate({'paddingLeft':'10px'},400)
+                                                .animate({'paddingLeft':'5px'},400);
+                   }
+                   else
+                   {
+                      $(this).removeClass('not_error').addClass('error');
+                      $(this).next('.error-box').html('&bull; Please type a correct email!')
+                                                 .animate({'paddingLeft':'10px'},400)
+                                                 .animate({'paddingLeft':'5px'},400);
+                   }
+               break;
+              case 'message':
+                  if(val != '' &&  30 < val.length < 1000)
+                  {
+                     $(this).addClass('not_error');
+                     $(this).next('.error-box').text('Correct')
+                                               .css('color','#69fb7a')
+                                               .animate({'paddingLeft':'10px'},400)
+                                               .animate({'paddingLeft':'5px'},400);
+                  }
+                  else
+                  {
+                     $(this).removeClass('not_error').addClass('error');
+                     $(this).next('.error-box').html('&bull; Minimum 30 characters!')
+                                               
+                                               .animate({'paddingLeft':'10px'},400)
+                                               .animate({'paddingLeft':'5px'},400);
+                  }
+                /*case 'checkbox':
+                	if(val == "checked"){
+                		$(this).addClass('not_error');
+                     	$(this).next('.error-box').text('Correct')
+                                               .css('color','green')
+                                               .animate({'paddingLeft':'10px'},400)
+                                               .animate({'paddingLeft':'5px'},400);
+                	}
+                	else{
+                		$(this).removeClass('not_error').addClass('error');
+                     	$(this).next('.error-box').html('&bull; Pleasу like our company')
+                                               .css('color','red')
+                                               .animate({'paddingLeft':'10px'},400)
+                                               .animate({'paddingLeft':'5px'},400);
+                	}*/
+              break;
+
+           } // end switch(...)
+
+         }); // end blur()
+			if($('#checkbox') == "checked"){
+                		$(this).addClass('not_error');
+                     	$(this).next('.error-box').text('Correct')
+                                               .css('color','green')
+                                               .animate({'paddingLeft':'10px'},400)
+                                               .animate({'paddingLeft':'5px'},400);
+                	}
+                	else{
+                		$(this).removeClass('not_error').addClass('error');
+                     	$(this).next('.error-box').html('&bull; Pleasу like our company')
+                                               .css('color','red')
+                                               .animate({'paddingLeft':'10px'},400)
+                                               .animate({'paddingLeft':'5px'},400);
+                	}
+         $('form#feedback-form').submit(function(e){
+             e.preventDefault();
+
+             if($('.not_error').length == 3)
+             {  
+                 $.ajax({
+                        url: 'send.php',
+                        type: 'post',
+                        data: $(this).serialize(),
+
+                        beforeSend: function(xhr, textStatus){ 
+                             $('form#feedback-form :input').attr('disabled','disabled');
+                        },
+
+                       success: function(response){
+                            $('form#feedback-form :input').removeAttr('disabled');
+                            $('form#feedback-form :text, textarea').val('').removeClass().next('.error-box').text('');
+                            alert(response);
+                       }
+                }); // end ajax({...})
+            }
+            else{
+              return false;
+            }
+       }); 
+
+      }); 
+</script>
+
+</script>
+</section>

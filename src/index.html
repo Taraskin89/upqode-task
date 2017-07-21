@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>UP QUODE</title>
+	<link rel="stylesheet" href="./css/main.css">
+	<link rel="stylesheet" href="./fonts/fonts.css">
+	<script type="text/javascript" src="./js/main.js"></script>
+	<script type="text/javascript" src="./js/jquery.min.js"></script>
+	<script type="text/javascript" src="./js/viewportchecker.js"></script>
+</head>
+<body>
+		//= template/nav.html
+		//= template/header.html
+		//= template/home.html
+		//= template/product.html
+		//= template/about.html
+		//= template/contact.html
+		//= template/footer.html
+	<script type="text/javascript" src="./js/index.js"></script>
+	<script type="text/javascript" src="./js/viewportchecker.js"></script>
+	<script type="text/javascript" src="./js/slider.min.js"></script>
+	 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCopWNQK7jzOpTQsn84eJ7h4mUA5Lrrip0&callback=showGoogleMaps"
+    async defer></script>
+    <script type="text/javascript">
+    	var menu_selector = "#menu";
+
+function onScroll(){
+    var scroll_top = $(document).scrollTop();
+    $(menu_selector + " a").each(function(){
+        var hash = $(this).attr("href");
+        var target = $(hash);
+        if (target.position().top <= scroll_top && target.position().top + target.outerHeight() > scroll_top) {
+            $(menu_selector + " a.active").removeClass("active");
+            $(this).addClass("active");
+        } else {
+            $(this).removeClass("active");
+        }
+    });
+}
+ 
+$(document).ready(function () {
+ 
+    $(document).on("scroll", onScroll);
+ 
+    $("a[href^=#]").click(function(e){
+        e.preventDefault();
+ 
+        $(document).off("scroll");
+        $(menu_selector + " a.active").removeClass("active");
+        $(this).addClass("active");
+        var hash = $(this).attr("href");
+        var target = $(hash);
+ 
+        $("html, body").animate({
+            scrollTop: target.offset().top
+        }, 500, function(){
+            window.location.hash = hash;
+            $(document).on("scroll", onScroll);
+        });
+ 
+    });
+ 
+});
+    </script>
+</body>
+</html>

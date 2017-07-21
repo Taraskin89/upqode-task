@@ -1,0 +1,51 @@
+/* @font-face kit by Fonts2u (http://www.fonts2u.com) */ 
+@font-face {
+	font-family:"Lato-Regular";
+	src:url("Lato-Regular.eot?") format("eot"),
+		url("Lato-Regular.woff") format("woff"),
+		url("Lato-Regular.ttf") format("truetype"),
+		url("Lato-Regular.svg#Lato-Regular") 
+}
+@font-face {
+  font-family: 'Lato-Black';
+  src: url('Lato-Black.woff2') format('woff2'),
+       url('Lato-Black.woff') format('woff'),
+       url('Lato-Black.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Lato-Bold';
+  src: url('Lato-Bold.woff2') format('woff2'),
+       url('Lato-Bold.woff') format('woff'),
+       url('Lato-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Lato-Light';
+  src: url('Lato-Light.woff2') format('woff2'),
+       url('Lato-Light.woff') format('woff'),
+       url('Lato-Light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Lato-Heavy';
+  src: url('Lato-Heavy.woff2') format('woff2'),
+       url('Lato-Heavy.woff') format('woff'),
+       url('Lato-Heavy.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Lato-Semibold';
+  src: url('Lato-Semibold.woff2') format('woff2'),
+       url('Lato-Semibold.woff') format('woff'),
+       url('Lato-Semibold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
